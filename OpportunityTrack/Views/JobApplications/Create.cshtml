@@ -1,0 +1,37 @@
+﻿@model OpportunityTrack.Models.JobApplication
+
+@{
+    ViewData["Title"] = "Add New Job";
+}
+
+<h2>Add New Job</h2>
+
+<form asp-action="Create">
+    <div class="center-create-container">
+        <div class="center-create">
+            <div class="form-group">
+                <label asp-for="Company" class="control-label"></label>
+                <input asp-for="Company" class="custom-input" />
+                <span asp-validation-for="Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JobTitle" class="control-label"></label>
+                <input asp-for="JobTitle" class="custom-input" />
+                <span asp-validation-for="JobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SkillsRequired" class="control-label"></label>
+                <input asp-for="SkillsRequired" class="custom-input" />
+                <span asp-validation-for="SkillsRequired" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateApplied" class="control-label"></label>
+                <input asp-for="DateApplied" class="custom-input" />
+                <span asp-validation-for="DateApplied" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Job" class="custom-button" />
+            </div>
+        </div>
+    </div>
+</form>

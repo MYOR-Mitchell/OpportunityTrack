@@ -1,0 +1,46 @@
+﻿@model IEnumerable<OpportunityTrack.Models.JobApplication>
+
+@{
+    ViewData["Title"] = "Job Applications";
+}
+
+<div class="centered-container">
+    <h1 class="text-center">Job Applications</h1>
+
+    <p class="text-center create-button-container">
+        <a asp-action="Create" class="custom-button create-button">Create New</a>
+    </p>
+
+    @foreach (var item in Model)
+    {
+        <div class="job-application-card">
+            <div class="job-application-details">
+                <div>
+                    <strong>Company</strong>
+                    <p class="job-application-content">@item.Company</p>
+                </div>
+                <div>
+                    <strong>Job Title</strong>
+                    <p class="job-application-content">@item.JobTitle</p>
+                </div>
+                <div>
+                    <strong>Skills Required</strong>
+                    <p class="job-application-content">@item.SkillsRequired</p>
+                </div>
+                <div>
+                    <strong>Date Applied</strong>
+                    <p class="job-application-content">@item.DateApplied.ToShortDateString()</p>
+                </div>
+                <div>
+                    <strong>Followed Up</strong>
+                    <p class="job-application-content"><input type="checkbox" disabled="disabled" @(item.FollowedUp ? "checked" : "") /></p>
+                </div>
+            </div>
+            <div class="button-container">
+                <a asp-action="Edit" asp-route-id="@item.Id" class="custom-button">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="custom-button">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="custom-button">Delete</a>
+            </div>
+        </div>
+    }
+</div>

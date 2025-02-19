@@ -1,0 +1,39 @@
+﻿@model OpportunityTrack.Models.JobApplication
+
+@{
+    ViewData["Title"] = "Edit Job";
+}
+
+<h2>Edit Job</h2>
+
+<form asp-action="Edit">
+    <div class="form-group">
+        <label asp-for="Company" class="control-label"></label>
+        <input asp-for="Company" class="form-control" />
+        <span asp-validation-for="Company" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="JobTitle" class="control-label"></label>
+        <input asp-for="JobTitle" class="form-control" />
+        <span asp-validation-for="JobTitle" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SkillsRequired" class="control-label"></label>
+        <input asp-for="SkillsRequired" class="form-control" />
+        <span asp-validation-for="SkillsRequired" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DateApplied" class="control-label"></label>
+        <input asp-for="DateApplied" class="form-control" />
+        <span asp-validation-for="DateApplied" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FollowedUp" class="control-label"></label>
+        <input asp-for="FollowedUp" class="form-control" />
+        <span asp-validation-for="FollowedUp" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
